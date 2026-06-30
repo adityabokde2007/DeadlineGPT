@@ -1,0 +1,195 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document synchronized from Firebase Auth.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The unique Firebase Auth identifier for the user."
+        },
+        "name": {
+          "type": "string",
+          "description": "The user's display name."
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email address."
+        },
+        "provider": {
+          "type": "string",
+          "description": "The authentication provider used (e.g. google, email)."
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "URL to the user's profile picture."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the user profile was created."
+        },
+        "lastLogin": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the user's last login."
+        }
+      },
+      "required": ["uid", "email"]
+    },
+    "Task": {
+      "title": "Task",
+      "description": "A deliverable task created by the user with deadlines and effort estimations.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID of the user who owns this task."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the task."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the task."
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the deadline."
+        },
+        "estimatedEffort": {
+          "type": "integer",
+          "description": "Estimated time to complete the task in minutes."
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "urgent", "critical"],
+          "description": "Priority level of the task."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category or tag for grouping tasks (e.g. Work, Personal)."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "in-progress", "completed"],
+          "description": "Current progress status of the task."
+        },
+        "subtasks": {
+          "type": "array",
+          "description": "List of smaller nested subtasks with their completion status."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the task was created."
+        }
+      },
+      "required": ["userId", "title", "deadline", "priority", "status", "createdAt"]
+    },
+    "ScheduleItem": {
+      "title": "ScheduleItem",
+      "description": "An allocation of time in the daily schedule for working on a task.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID of the user who owns this schedule item."
+        },
+        "taskId": {
+          "type": "string",
+          "description": "The ID of the task this schedule item relates to."
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date in YYYY-MM-DD format."
+        },
+        "startTime": {
+          "type": "string",
+          "description": "Start time in HH:MM format."
+        },
+        "endTime": {
+          "type": "string",
+          "description": "End time in HH:MM format."
+        },
+        "aiNote": {
+          "type": "string",
+          "description": "AI recommendation or insight regarding this time block."
+        }
+      },
+      "required": ["userId", "taskId", "date", "startTime", "endTime"]
+    },
+    "UserPrefs": {
+      "title": "UserPrefs",
+      "description": "Personalized workspace productivity preferences.",
+      "type": "object",
+      "properties": {
+        "availableHoursPerDay": {
+          "type": "number",
+          "description": "Number of productive hours available per day."
+        },
+        "workingHoursStart": {
+          "type": "string",
+          "description": "Preferred starting hour for focus blocks (HH:MM)."
+        },
+        "workingHoursEnd": {
+          "type": "string",
+          "description": "Preferred ending hour for focus blocks (HH:MM)."
+        }
+      },
+      "required": ["availableHoursPerDay", "workingHoursStart", "workingHoursEnd"]
+    },
+    "ActivityLogItem": {
+      "title": "ActivityLogItem",
+      "description": "Historical record of user actions and automated workspace events.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID of the user associated with this action."
+        },
+        "action": {
+          "type": "string",
+          "enum": ["completed", "created", "missed"],
+          "description": "The specific action recorded."
+        },
+        "taskTitle": {
+          "type": "string",
+          "description": "Title of the task relevant to the action."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the activity log entry."
+        }
+      },
+      "required": ["userId", "action", "taskTitle", "timestamp"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles stored by authenticated UID."
+    },
+    "tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Tasks created and owned by users."
+    },
+    "schedule/{scheduleId}": {
+      "schema": "ScheduleItem",
+      "description": "Scheduled intervals and daily planning slots linked to tasks."
+    },
+    "userPrefs/{userId}": {
+      "schema": "UserPrefs",
+      "description": "Productivity and workspace hour preferences for users."
+    },
+    "activityLog/{logId}": {
+      "schema": "ActivityLogItem",
+      "description": "Automated logs tracking completed, created, or missed tasks."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "DeadlineGPT",
+  "description": "AI-powered calendar and task synchronization to ensure high-output professionals never miss what matters.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
