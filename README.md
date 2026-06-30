@@ -1,7 +1,7 @@
 <div align="center">
 <img width="1200" height="475" alt="Built with Google AI Studio" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 
-# 🎯 DeadlineGPT
+# DeadlineGPT
 
 ### AI-Powered Productivity Companion That Never Lets You Miss a Deadline
 
@@ -18,26 +18,26 @@
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---------|-------------|
-| 🤖 **AI Chat Interface** | Describe tasks in natural language — Gemini extracts titles, deadlines, priorities & subtasks automatically |
-| 📅 **Smart Auto-Scheduling** | AI distributes work across days with conflict-free time slots based on your available hours |
-| 📊 **Analytics Dashboard** | Track completion rates, productivity streaks, and task distribution with visual charts |
-| 🔔 **Smart Nudges** | Context-aware AI reminders that warn you about approaching deadlines and suggest action |
-| 📋 **Task Breakdown** | One-click AI decomposition of complex tasks into 3-5 actionable subtasks |
-| 🗓️ **Google Calendar Sync** | Two-way sync with Google Calendar — tasks auto-appear as calendar events |
-| 🎤 **Voice Input** | Speak your tasks — Gemini transcribes and processes voice recordings |
-| 📸 **Image/File OCR** | Upload images or documents — Gemini extracts text and creates tasks from them |
-| 🧘 **Focus Mode** | Distraction-free Pomodoro-style focus sessions with timer |
-| 🔄 **Smart Reschedule** | AI detects overdue tasks and suggests optimal new time slots |
-| 🌙 **Dark/Light Mode** | Full theme support with smooth transitions |
-| ⌨️ **Keyboard Shortcuts** | `Ctrl+1-4` for instant navigation between pages |
+| **AI Chat Interface** | Describe tasks in natural language — Gemini extracts titles, deadlines, priorities & subtasks automatically |
+| **Smart Auto-Scheduling** | AI distributes work across days with conflict-free time slots based on your available hours |
+| **Analytics Dashboard** | Track completion rates, productivity streaks, and task distribution with visual charts |
+| **Smart Nudges** | Context-aware AI reminders that warn you about approaching deadlines and suggest action |
+| **Task Breakdown** | One-click AI decomposition of complex tasks into 3-5 actionable subtasks |
+| **Google Calendar Sync** | Two-way sync with Google Calendar — tasks auto-appear as calendar events |
+| **Voice Input** | Speak your tasks — Gemini transcribes and processes voice recordings |
+| **Image/File OCR** | Upload images or documents — Gemini extracts text and creates tasks from them |
+| **Focus Mode** | Distraction-free Pomodoro-style focus sessions with timer |
+| **Smart Reschedule** | AI detects overdue tasks and suggests optimal new time slots |
+| **Dark/Light Mode** | Full theme support with smooth transitions |
+| **Keyboard Shortcuts** | `Ctrl+1-4` for instant navigation between pages |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -50,7 +50,7 @@
 
 ---
 
-## 🚀 Run Locally
+## Run Locally
 
 **Prerequisites:** [Node.js](https://nodejs.org/) (v18+)
 
@@ -81,15 +81,15 @@ The app will be running at **http://localhost:3000** 🎉
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `GEMINI_API_KEY` | ✅ Yes | Google Gemini API key ([Get one here](https://aistudio.google.com/apikey)) |
-| `GOOGLE_CLIENT_ID` | ❌ Optional | For Google Calendar OAuth integration |
-| `GOOGLE_CLIENT_SECRET` | ❌ Optional | For Google Calendar OAuth integration |
+| `GEMINI_API_KEY` | Yes | Google Gemini API key ([Get one here](https://aistudio.google.com/apikey)) |
+| `GOOGLE_CLIENT_ID` | Optional | For Google Calendar OAuth integration |
+| `GOOGLE_CLIENT_SECRET` | Optional | For Google Calendar OAuth integration |
 
 > **Note:** Firebase client config is pre-configured. No Firebase setup needed to run locally.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 DeadlineGPT/
@@ -113,7 +113,7 @@ DeadlineGPT/
 
 ---
 
-## 🔒 Security
+## Security
 
 - All Firestore data is protected by comprehensive [security rules](firestore.rules) with owner-exclusivity enforcement
 - Server-side API key management — Gemini keys never reach the client
@@ -122,7 +122,7 @@ DeadlineGPT/
 
 ---
 
-## 📜 Scripts
+## Scripts
 
 | Command | Description |
 |---------|-------------|
