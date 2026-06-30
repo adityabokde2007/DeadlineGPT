@@ -12,8 +12,6 @@
 
 *Turn plain-language task descriptions into smart, auto-scheduled plans. Gemini handles prioritization, scheduling, and reminders — so you never miss a deadline.*
 
-[View in AI Studio](https://ai.studio/apps/ee7ba39c-97ff-4b26-860a-2f1bca13c8a2)
-
 </div>
 
 ---
