@@ -71,11 +71,11 @@ cp .env.example .env
 npm run dev
 ```
 
-The app will be running at **http://localhost:3000** 🎉
+The app will be running at **http://localhost:3000**
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
